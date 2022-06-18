@@ -26,7 +26,8 @@ import time
 #import sys
 import sys
 
-def download_video(self,path):
+
+def download_video(path):
     #choisir le repertoire de stockage des video
     try:
         path = "../YoutubeDownloader/video"
@@ -43,13 +44,8 @@ def download_video(self,path):
     print(f"{yt.title} téléchargée avec succès !")
     print("La video se trouve : " + path)
 
-def download_playlist(self, path):
-    #choisir le repertoire de stockage des video
-    try:
-        path = "../YoutubeDownloader/video"
-    except:
-        print("Erreur lors du téléchargement, veuillez rééssayer  ")
-    
+def download_playlist(path):
+    path = "../YoutubeDownloader/video"
     #choisir le lien de la playlist
     link = input("choisir le lien de la playlist : ")
     reso = input("choisir la resolution de la video (360p, 480p, 720p) : ")
@@ -62,12 +58,8 @@ def download_playlist(self, path):
     print("Les videos se trouvent dans : " + path)
 
 
-def download_mp3(self, path):
-    try:
-        path = "../YoutubeDownloader/musique"
-    except:
-        print("Erreur lors du téléchargement, veuillez rééssayer  ")
-
+def download_mp3(path):
+    path = "../YoutubeDownloader/musique"
     link = input("choisir le lien de la musique : ")
     yt= YouTube(link)
     #telecharger la musique en mp3
@@ -77,14 +69,11 @@ def download_mp3(self, path):
             print("La musique se trouve : " + path)
     except:
         print("Erreur lors du téléchargement, veuillez rééssayer  ")
-    convertisseur("")
+    convertisseur(path)
 
 
-def download_playlist_mp3(self, path):
-    try:
-        path = "../YoutubeDownloader/musique"
-    except:
-        print("Erreur lors du téléchargement, veuillez rééssayer  ")
+def download_playlist_mp3(path):
+    path = "../YoutubeDownloader/musique"
     link = input("choisir le lien de la playlist : ")
     p = Playlist(link)
     print(f"Telechargement de la playlist {p.title}")
@@ -100,7 +89,7 @@ def download_playlist_mp3(self, path):
 
         convertisseur()
 
-def convertisseur (self, path):
+def convertisseur (path):
     path = ("../YoutubeDownloader/musique")
     files = os.listdir(path)
     
@@ -138,15 +127,9 @@ text = '''
 print(Colorate.Horizontal(Colors.blue_to_cyan, text))
 print()
 print()
-print()
-print()
 
-textligne = "--------------------------------------------------------------------------------------------------------------"
+textligne = "--------------------------------------------------------------------------------------------------------------------"
 print(Colors.blue + textligne )
-print()
-print()
-print()
-print()
 print()
 print()
 
