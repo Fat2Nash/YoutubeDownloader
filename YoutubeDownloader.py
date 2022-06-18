@@ -28,12 +28,7 @@ import sys
 
 
 def download_video(path):
-    #choisir le repertoire de stockage des video
-    try:
-        path = "../YoutubeDownloader/video"
-    except:
-        print("Erreur lors du téléchargement, veuillez rééssayer  ")
-
+    path = "../YoutubeDownloader/video"
     #choisir le lien de la video
     link = input("choisir le lien de la video : ")
     #choisir la resolution de la video
